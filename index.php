@@ -2,6 +2,8 @@
 
 session_start();
 
+$user = $_SESSION['user'];
+
 // ファイルの読み込み
 require_once('Models/Task.php');
 require_once('function.php');
@@ -28,6 +30,11 @@ $tasks = $task->getAll();
                 <nav class="navbar navbar-dark bg-dark">
                     <a href="index.php" class="navbar-brand">Todo</a>
                     <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <span class="nav-link text-light">
+                                <?= $user['email'] ?? 'ログインユーザーのメールアドレス' ?>
+                            </span>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="create.php">Create</a>
                         </li>
