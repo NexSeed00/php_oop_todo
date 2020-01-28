@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // ファイルの読み込み
 require_once('Models/Task.php');
 require_once('function.php');
