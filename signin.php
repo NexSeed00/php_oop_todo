@@ -14,6 +14,7 @@ $loginUser = $user->findByEmail([$email]);
 //  →ログイン画面に戻る
 if (!$loginUser) {
     header('Location: signinForm.php');
+    exit;
 }
 
 // 2. ユーザーはいたけど、パスワードが一致しない
@@ -22,6 +23,7 @@ if (!$loginUser) {
 // 画面から送信されたパスワードを暗号化する
 if (!password_verify($password, $loginUser['password'])) {
     header('Location: signinForm.php');
+    exit;
 }
 
 // 3. ユーザーはいて、パスワードが一致
@@ -31,4 +33,5 @@ if (password_verify($password, $loginUser['password'])) {
     session_start();
     $_SESSION['user'] = $loginUser;
     header('Location: index.php');
+    exit;
 }

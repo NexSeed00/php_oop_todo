@@ -14,3 +14,4 @@ $task->update([$title, $contents, $id]);
 
 // リダイレクト
 header('location:index.php');
+exit;

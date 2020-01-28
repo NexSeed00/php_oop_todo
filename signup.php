@@ -28,3 +28,4 @@ $_SESSION['user'] = $newUser;
 
 // 一覧画面に遷移
 header('Location: index.php');
+exit;

@@ -12,3 +12,4 @@ $task->delete([$id]);
 
 // リダイレクト
 header("location: index.php");
+exit;

@@ -39,6 +39,13 @@ $tasks = $task->getAll();
                             <a class="nav-link text-light" href="create.php">Create</a>
                         </li>
                         <li class="nav-item">
+                            <?php if($user === null): ?>
+                                <a class="nav-link text-light" href="signinform.php">サインイン</a>
+                            <?php else: ?>
+                                <a class="nav-link text-light" href="signout.php">サインアウト</a>
+                            <?php endif; ?>
+                        </li>
+                        <li class="nav-item">
                             <form class="form-inline">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
